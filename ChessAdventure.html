@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess_Adventure</title>
     <link rel="stylesheet" href="StyleSheet.css">
+    <script src="https://pixijs.download/release/pixi.js"></script>
 </head>
 <body>
 
@@ -12,6 +13,30 @@
         <h1>Chess Adventure</h1>
         <p class="bodytext">A gateway drug to chess</p>
       </div>
+
+      <script>
+        let app;
+        window.onload = function () {
+            app = new PIXI.Application({ 
+            width: 840, 
+            height: 859,
+            backgroundColor: 0x1abc9c
+        });
+        document.body.appendChild(app.view);
+
+        app.loader.baseUrl = "assets";
+        app.loader
+            .add("BgBack", "assets/Background.png")
+            .add("BgFront", "assets/Foreground.png")
+            .add("Character", "")
+
+        app.ticker.add(gameLoop);
+        }
+        
+        function gameLoop(delta) {
+
+        }
+      </script>
 
     <script>
 
